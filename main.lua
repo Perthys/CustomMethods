@@ -35,6 +35,10 @@ return function(Settings)
         function CustomNameCalls.CreateGlobalMethod(self, Method, Handler)
             Method = CleanString(Method);
             Methods.GlobalMethods[Method] = Handler;
+            
+            return function()
+                Methods.GlobalMethods[Method] = nil;
+            end
         end
         
         local OldNameCall; OldNameCall = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
@@ -50,10 +54,9 @@ return function(Settings)
             
             return OldNameCall(self, ...)
         end))
+        
+        return shared.CustomNameCalls
     else
         return shared.CustomNameCalls
     end
 end
-
-
-
