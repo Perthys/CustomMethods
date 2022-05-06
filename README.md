@@ -3,14 +3,24 @@ Test
 
 ```lua
 local CustomNameCalls = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/Customnamecall/main/main.lua'))()
--- too lazy to form loadstring call copied from loader
+
 local Namecall = CustomNameCalls:CreateGlobalMethod("Racist", function()
     return "Balls"
 end)
 
-local Namecall = CustomNameCalls:CreateGlobalMethod(":Racist()", function()
+
+local Namecall = CustomNameCalls:CreateGlobalMethod(":Racist()" -- (You can use : and () if you want so it looks less ass) , function()
     return "Balls"
 end)
 
 print(game:Racist())
+
+local CustomNameCalls = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/Customnamecall/main/main.lua'))()
+
+-- Will Return last time u called it (in the current runtime) so it saves all ur custom things
+
+-- You can remove the custom method by calling it
+
+Namecall() print(game:Racist()) -- nil
+
 ```
