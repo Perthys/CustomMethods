@@ -1,6 +1,6 @@
 return function(Settings)
     Settings = Settings or {
-        CheckSynaspeThread = false
+        CheckSynaspeThread = false;
         CustomSubKeys = {}
     }
     
