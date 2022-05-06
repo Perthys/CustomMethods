@@ -2,7 +2,7 @@
 Test
 
 ```lua
-local CustomNameCalls = loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+local CustomNameCalls = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/Customnamecall/main/main.lua'))()
 
 local Namecall = CustomNameCalls:CreateGlobalMethod("Faggot", function()
     return "Balls"
