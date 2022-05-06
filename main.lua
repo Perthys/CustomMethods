@@ -41,10 +41,6 @@ local OldNameCall; OldNameCall = hookmetamethod(game, "__namecall", newcclosure(
     local Method = getnamecallmethod()
 
     if GlobalMethods[Method] then
-        if Settings.CheckSynaspeThread and checkcaller() then
-            return OldNameCall(self, ...)
-        end
-        
         return GlobalMethods[Method](self, ...)
     end
     
