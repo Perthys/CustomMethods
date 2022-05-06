@@ -1,7 +1,11 @@
 return function(Settings)
     Settings = Settings or {
         CheckSynaspeThread = false;
-        CustomSubKeys = {}
+        CustomSubKeys =  {
+            ":";
+            "%(";
+            "%)";
+        };
     }
     
     if not shared.CustomNameCalls then
