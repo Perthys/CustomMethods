@@ -13,7 +13,8 @@ local Namecall = CustomNameCalls:CreateGlobalMethod(":Racist()"  , function()
     return "Balls"
 end)
 -- (You can use : and () if you want so it looks less ass)
-print(game:Racist())
+
+print(game:Racist()) -- Balls
 
 local CustomNameCalls = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/Customnamecall/main/main.lua'))()
 
