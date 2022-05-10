@@ -3,7 +3,6 @@ if shared.CustomNameCalls then
 end
 
 shared.CustomNameCalls = {}
-shared.CustomNameCalls.__index = shared.CustomNameCalls
 
 local CustomNameCalls = shared.CustomNameCalls
 
