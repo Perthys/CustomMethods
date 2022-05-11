@@ -11,8 +11,7 @@ Create custom functionalities on Roblox Objects! Using methods.
 
 **How to use**
 
->To intialize [CustomMethods] Put this on top of your main script.
->Please note that Reinitializing CustomMethods will return the same library you called last time
+>To use CustomMethods Copy this and Paste it on top of your script.
 
 ```lua
 local CustomMethods = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/CustomMethods/main/main.lua'))()
