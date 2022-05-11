@@ -1,5 +1,11 @@
 ### Custom Methods
-Test
+
+Create custom functionalities on Roblox Objects! Using methods.
+
+
+#QuickStart
+
+
 
 ```lua
 local CustomNameCalls = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/Customnamecall/main/main.lua'))()
