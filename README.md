@@ -11,15 +11,14 @@ Create custom functionalities on Roblox Objects! Using methods.
 
 **How to use**
 
-To intialize [CustomMethods] Put this on top of your main script.
-
-Please note that Reinitializing CustomMethods will return the same library you called last time
+>To intialize [CustomMethods] Put this on top of your main script.
+>Please note that Reinitializing CustomMethods will return the same library you called last time
 
 ```lua
 local CustomMethods = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/CustomMethods/main/main.lua'))()
 ```
 
-We are going to make a simple method globally called ":PrintFullName()" using the CreateGlobalMethod.
+>We are going to make a simple method globally called ":PrintFullName()" using the CreateGlobalMethod.
 
 ```lua
 local Namecall = CustomNameCalls:CreateGlobalMethod(":PrintOutFullName()", function(self, ...) -- Please Note : and () are optional and you can use the direct name.
@@ -31,12 +30,14 @@ end)
 game.Players.LocalPlayer:PrintOutFullName() -- Output: Players.AltAccountReal
 ```
 
-It's that simple!
+>It's that simple!
 
 **How To Remove**
 
+> You can easily remove the method by calling the returned function.
+
 ```lua
-local Namecall = CustomNameCalls:CreateGlobalMethod(":PrintOutFullName()", function(self, ...) -- Please Note : and () are optional and you can use the direct name.
+local Namecall = CustomNameCalls:CreateGlobalMethod(":PrintOutFullName()", function(self, ...)
     return print(self:GetFullName())
 end)
 
