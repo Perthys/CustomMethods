@@ -1,4 +1,4 @@
-# Customnamecall
+### Custom Methods
 Test
 
 ```lua
