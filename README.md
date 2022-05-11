@@ -18,7 +18,7 @@ Create custom functionalities on Roblox Objects! Using methods.
 local CustomMethods = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/CustomMethods/main/main.lua'))()
 ```
 
->We are going to make a simple method globally called `:PrintFullName()` using the CreateGlobalMethod.
+>We are going to make a simple method globally called `:PrintFullName()` using the `CreateGlobalMethod()` function.
 
 ```lua
 local Namecall = CustomNameCalls:CreateGlobalMethod(":PrintOutFullName()", function(self, ...) -- Please Note : and () are optional and you can use the direct name.
@@ -54,8 +54,6 @@ game.Players.LocalPlayer:PrintOutFullName() -- Output: nil
 **Creating Methods for specific Instances**
 
 > You can also create methods for Specific Instances with the `CreateInstanceMethod()` function
-
-
 
 
 ```lua
