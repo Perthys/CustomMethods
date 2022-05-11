@@ -13,7 +13,8 @@ local BlacklistedKeys = {
 }
 
 CustomNameCalls.Methods = {
-    GlobalMethods = {}
+    GlobalMethods = {};
+    InstanceMethods = {};
 }
 
 local Methods = CustomNameCalls.Methods
@@ -36,8 +37,28 @@ function CustomNameCalls.CreateGlobalMethod(self, Method, Handler)
     end
 end
 
+function CustomNameCalls.CreateInstanceMethod(self, Instance, Method, Handler)
+    if not Methods.InstanceMethods[Instance] then
+        Methods.InstanceMethods[Instance] = {}
+    end
+    
+    Method = CleanString(Method)
+    Methods.InstanceMethods[Instance][Method] = Handler
+
+    return function()
+        Methods.InstanceMethods[Instance][Method] = nil
+    end
+end
+
 local OldNameCall; OldNameCall = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
     local Method = getnamecallmethod()
+    local InstanceMethods = Methods.InstanceMethods[self]
+
+    if InstanceMethods then
+        if InstanceMethods[Method] then
+            return InstanceMethods[Method](self, ...)
+        end
+    end
 
     if GlobalMethods[Method] then
         return GlobalMethods[Method](self, ...)
