@@ -31,9 +31,10 @@ end)
 game.Players.LocalPlayer:PrintOutFullName() -- Output: Players.AltAccountReal
 ```
 
-It's that simple
+It's that simple!
 
 **How To Remove**
+
 ```lua
 local Namecall = CustomNameCalls:CreateGlobalMethod(":PrintOutFullName()", function(self, ...) -- Please Note : and () are optional and you can use the direct name.
     return print(self:GetFullName())
@@ -45,6 +46,7 @@ game.Players.LocalPlayer:PrintOutFullName() -- Output: nil
 ```
 
 **Creating Methods for specific Instances**
+
 You can also create methods for Specific Instances with the CreateInstanceMethod() function
 
 ```lua
