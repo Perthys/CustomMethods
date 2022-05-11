@@ -1,9 +1,9 @@
-### Custom Methods
+# Custom Methods
 
 Create custom functionalities on Roblox Objects! Using methods.
 
 
-# QuickStart
+### QuickStart
 
 
 
