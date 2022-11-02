@@ -32,9 +32,9 @@ function CustomNameCalls.CreateGlobalMethod(self, Method, Handler)
     Method = CleanString(Method)
     Methods.GlobalMethods[Method] = Handler
 
-    return function()
+    return {Destroy = function()
         Methods.GlobalMethods[Method] = nil
-    end
+    end}
 end
 
 function CustomNameCalls.CreateInstanceMethod(self, Instance, Method, Handler)
@@ -45,9 +45,11 @@ function CustomNameCalls.CreateInstanceMethod(self, Instance, Method, Handler)
     Method = CleanString(Method)
     Methods.InstanceMethods[Instance][Method] = Handler
 
-    return function()
-        Methods.InstanceMethods[Instance][Method] = nil
-    end
+    return {
+        Destroy = function()
+            Methods.InstanceMethods[Instance][Method] = nil
+        end
+    }
 end
 
 local OldNameCall; OldNameCall = hookmetamethod(game, "__namecall", newcclosure(function(self, ...)
